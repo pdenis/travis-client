@@ -1,5 +1,5 @@
 {
-    "name":         "snide/php-travos-client",
+    "name":         "snide/php-travis-client",
     "type":         "library",
     "description":  "PHP Travis Client",
     "keywords":     ["library", "travis", "client", "snide"],
