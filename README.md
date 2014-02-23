@@ -3,6 +3,10 @@ scrutinizer-client
 
 PHP Client for Travis API
 
+[![Build Status](https://travis-ci.org/pdenis/travis-client.png)](https://travis-ci.org/pdenis/travis-client)
+[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/pdenis/travis-client/badges/quality-score.png?s=951d12fd632e8e8f96280cd2fc2c54a6a5b5de13)](https://scrutinizer-ci.com/g/pdenis/travis-client/)
+[![Code Coverage](https://scrutinizer-ci.com/g/pdenis/travis-client/badges/coverage.png?s=d31b8500d1dafb4be39595928d9346cb112c0480)](https://scrutinizer-ci.com/g/pdenis/travis-client/)
+
 ## Installation
 
 ### Installation by Composer
