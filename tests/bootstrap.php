@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Snide scrutinizer-client package.
+ * This file is part of the Snide travis-client package.
  *
  * (c) Pascal DENIS <pascal.denis.75@gmail.com>
  *
