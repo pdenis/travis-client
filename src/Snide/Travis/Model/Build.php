@@ -85,6 +85,48 @@ class Build
     protected $eventType;
 
     /**
+     * @var string
+     */
+    protected $branch;
+
+    /**
+     * @var string
+     */
+    protected $message;
+
+    /**
+     * @param string $branch
+     */
+    public function setBranch($branch)
+    {
+        $this->branch = $branch;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBranch()
+    {
+        return $this->branch;
+    }
+
+    /**
+     * @param string $message
+     */
+    public function setMessage($message)
+    {
+        $this->message = $message;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->message;
+    }
+
+    /**
      * @param string $eventType
      */
     public function setEventType($eventType)
