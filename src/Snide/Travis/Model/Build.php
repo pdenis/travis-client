@@ -22,7 +22,7 @@ class Build
     /**
      * @var int
      */
-    protected $commitId;
+    protected $commit;
 
     /**
      * @var int
@@ -75,19 +75,60 @@ class Build
     protected $jobIds;
 
     /**
-     * @param int $commitId
+     * @var int
      */
-    public function setCommitId($commitId)
+    protected $result;
+
+    /**
+     * @var string
+     */
+    protected $eventType;
+
+    /**
+     * @param string $eventType
+     */
+    public function setEventType($eventType)
     {
-        $this->commitId = $commitId;
+        $this->eventType = $eventType;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEventType()
+    {
+        return $this->eventType;
+    }
+
+    /**
+     * @param int $result
+     */
+    public function setResult($result)
+    {
+        $this->result = $result;
     }
 
     /**
      * @return int
      */
-    public function getCommitId()
+    public function getResult()
     {
-        return $this->commitId;
+        return $this->result;
+    }
+    /**
+     * @param int $commit
+     */
+    public function setCommit($commit)
+    {
+        $this->commit = $commit;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCommit()
+    {
+        return $this->commit;
     }
 
     /**

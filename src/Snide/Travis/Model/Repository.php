@@ -77,6 +77,11 @@ class Repository
     protected $lastBuildFinishedAt;
 
     /**
+     * @var array
+     */
+    protected $builds;
+
+    /**
      * Constructor
      *
      * @param string $slug
@@ -87,6 +92,55 @@ class Repository
             $this->slug = $slug;
         }
     }
+
+    /**
+     * Add build to the list
+     *
+     * @param Build $build
+     */
+    public function addBuild(Build $build)
+    {
+        $this->getBuilds();
+        $build->setRepositoryId($this->getId());
+        $this->builds[$build->getId()] = $build;
+    }
+
+    /**
+     * Remove build from the list
+     *
+     * @param Build $build
+     */
+    public function removeBuild(Build $build)
+    {
+        if (isset($this->builds[$build->getId()])) {
+            unset($this->builds[$build->getId()]);
+        }
+    }
+
+    /**
+     * Get builds
+     *
+     * @return array
+     */
+    public function getBuilds()
+    {
+        if (!is_array($this->builds)) {
+            $this->builds = array();
+        }
+
+        return $this->builds;
+    }
+
+    /**
+     * Set builds
+     *
+     * @param array $builds
+     */
+    public function setBuilds(array $builds = array())
+    {
+        $this->builds = $builds;
+    }
+
     /**
      * @param string $description
      */
