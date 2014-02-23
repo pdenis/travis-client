@@ -1,4 +1,4 @@
-scrutinizer-client
+travis-client
 ==================
 
 PHP Client for Travis API
