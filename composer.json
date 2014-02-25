@@ -3,7 +3,7 @@
     "type":         "library",
     "description":  "PHP Travis Client",
     "keywords":     ["library", "travis", "client", "snide"],
-    "homepage":     "http://github.com/pdenis/monitoring",
+    "homepage":     "http://github.com/pdenis/travis-client",
     "license":      "MIT",
     "authors":      [
         {
