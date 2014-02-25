@@ -15,6 +15,7 @@ use Snide\Travis\Hydrator\SimpleHydrator;
 use Snide\Travis\Model\Build;
 use Snide\Travis\Model\Repository;
 use Guzzle\Http\Client as GuzzleClient;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
  * Class Client
@@ -40,7 +41,7 @@ class Client
     /**
      * @var Client
      */
-    protected $client;
+    protected $httpClient;
 
     /**
      * Constructor
@@ -55,7 +56,7 @@ class Client
             $this->hydrator = $hydrator;
         }
 
-        $this->client = new GuzzleClient($this->endpoint, array());
+        $this->httpClient = new GuzzleClient($this->endpoint, array());
     }
 
     /**
@@ -106,19 +107,13 @@ class Client
     }
 
     /**
-     * @param \Snide\Travis\Client $client
+     * Add Http client subscriber
+     *
+     * @param EventSubscriberInterface $subscriber
      */
-    public function setClient($client)
+    public function addSubscriber(EventSubscriberInterface $subscriber)
     {
-        $this->client = $client;
-    }
-
-    /**
-     * @return \Snide\Travis\Client
-     */
-    public function getClient()
-    {
-        return $this->client;
+        $this->httpClient->addSubscriber($subscriber);
     }
 
     /**
@@ -131,7 +126,7 @@ class Client
      */
     protected function getResponse($uri, array $queryParams = array())
     {
-        $request = $this->client->get($uri, array(), array('query' => $queryParams));
+        $request = $this->httpClient->get($uri, array(), array('query' => $queryParams));
 
         return $request->send()->json();
     }
